@@ -1,46 +1,49 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-
-    <meta charset="utf-8">
-
-    <title>Travel plans</title>
-
-    <meta name="description" content="">
-
-    <link rel="stylesheet" href="css/app.css">
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <title>Restaurant Reviews</title>
 </head>
 
-<body>
+<body >
+  <header>
+    <nav>
+      <h1><a href="/">Restaurant Reviews</a></h1>
+    </nav>
+  </header>
+<main i="maincontent">
+    <section id="map-container">
+      <div id="map" aria-label="location" role="application"></div>
+    </section>
+    <section id="restaurantscontent">
+      <div class="filter-options">
+        <h2>Filter Results</h2>
+        <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
+          <option value="all">All Neighborhoods</option>
+        </select>
+        <label for="neighborhoods-select">neighborhoods-select</label>
+        <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
+          <option value="all">All Cuisines</option>
+        </select>
+        <label for="cuisines-select">cuisines-select</label>
+      </div>
+      <ul id="restaurants-list"></ul>
+    </section>
+  </main>
+  <script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
+  <script type="application/javascript" charset="utf-8" src="js/main.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDw2lxMXY6mTWOXoCAItPdgVJ7O-VV_MSY&libraries=places&callback=initMap"></script>
 
 
-
-    <div class="container">
-
-        <div class="destination-container">
-
-            <div class="destination" id="florida">
-
-                <h2>Florida</h2>
-
-            </div>
-
-
-
-            <div class="destination" id="paris">
-
-                <h2>Paris</h2>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
+  <footer id="footer">
+    Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
+  </footer>
 
 </body>
 
